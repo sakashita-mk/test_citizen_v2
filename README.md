@@ -38,10 +38,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 Run locally:
 
-```bash
+`ash
 npm install
 npm run dev
-```
+`
 
 Routes:
 - /
@@ -53,17 +53,31 @@ Routes:
 - /auth
 - /profile/setup
 
+## Phase1-②
 
+Run locally:
 
-## Phase1-① (Scaffold)
-### Run locally
-cd app
+`ash
 npm install
 npm run dev
+`
 
-### Routes
+Mock auth:
+- Visit /auth and click Log in to set the auth cookie and go to /.
+- Click Log out to clear the cookie and return to /auth.
+
+ログイン/ログアウトの確認方法:
+- 未ログイン状態で /map などの保護ルートにアクセスすると /auth にリダイレクトされる
+- /auth で Log in を押すと保護ルートへ入れる
+- 右上の Logout を押すと /auth に戻る
+
+Routes:
 - /
-- /map
-- /report
-- /community
-- /profile
+- /map (protected)
+- /report (protected)
+- /community (protected)
+- /profile (protected)
+- /admin (protected)
+- /auth
+- /profile/setup (protected)
+
